@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "136218394506",
+    "firebase_url": "https://helpful-quanta-181207.firebaseio.com",
+    "project_id": "helpful-quanta-181207",
+    "storage_bucket": "helpful-quanta-181207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136218394506:android:8a476a97f02cf78de79273",
+        "android_client_info": {
+          "package_name": "com.quatrix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136218394506-tsboac36r1n4qb2078e6urub1javgter.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quatrix",
+            "certificate_hash": "9ad950a631ce68b16fdaa00ef2d9eedae78de269"
+          }
+        },
+        {
+          "client_id": "136218394506-te71v4kl0ne4qmnlafe9236ngsm0u0ht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnQ_OfdDhUU3AFjPRL7_U0yW5c0zZg-p8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136218394506-te71v4kl0ne4qmnlafe9236ngsm0u0ht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
