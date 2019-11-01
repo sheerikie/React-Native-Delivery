@@ -13,6 +13,7 @@
     "expo-facebook": "^7.0.0",
     "expo-font": "~7.0.0",
     "expo-google-sign-in": "^7.0.0",
+    "expo-location": "~7.0.0",
     "firebase": "6.6.0",
     "formik": "1.5.8",
     "navigationbar-react-native": "^0.0.5",

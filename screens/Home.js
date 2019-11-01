@@ -8,6 +8,8 @@ import MapView, {
   Polyline,
   PROVIDER_GOOGLE
 } from "react-native-maps";
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 import haversine from "haversine";
 
 
@@ -15,8 +17,9 @@ import haversine from "haversine";
 // const LONGITUDE = 78.07513;
 const LATITUDE_DELTA = 0.009;
 const LONGITUDE_DELTA = 0.009;
-const LATITUDE = 37.78825;
-const LONGITUDE = -122.4324;
+const LATITUDE = 1.2998;
+const LONGITUDE = 36.7807;
+
 const absoluteFillObject = {
   position: 'absolute',
   left: 0,
@@ -46,11 +49,17 @@ class Home extends Component {
       })
     };
   }
-  componentDidMount() {
-    const { coordinate } = this.state;
+  async componentDidMount() {
+    const { status } = await Permissions.getAsync(Permissions.LOCATION)
 
+    if (status !== 'granted') {
+      await Permissions.askAsync(Permissions.LOCATION)
+    }
+
+    
+    const { coordinate } = this.state;
     this.watchID = navigator.geolocation.watchPosition(
-      position => {
+      (position) => {
         const { routeCoordinates, distanceTravelled } = this.state;
         const { latitude, longitude } = position.coords;
 

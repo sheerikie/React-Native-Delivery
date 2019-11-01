@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { StyleSheet, SafeAreaView, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, SafeAreaView, ScrollView, View, TouchableOpacity } from 'react-native'
 import { Button } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons'
 import { Formik } from 'formik'
@@ -133,6 +133,7 @@ async  loginWithFacebook(){
     const { passwordVisibility, rightIcon } = this.state
     return (
       <SafeAreaView style={styles.container} accessibilityLabel="testview">
+      <ScrollView>
         <HideWithKeyboard style={styles.logoContainer}>
           <AppLogo />
         </HideWithKeyboard>
@@ -230,6 +231,7 @@ async  loginWithFacebook(){
           }}
           type='clear'
         />
+         </ScrollView>
       </SafeAreaView>
     )
   }
@@ -239,14 +241,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 50
+    marginTop: 20
   },
   logoContainer: {
-    marginBottom: 15,
+    marginBottom: 7,
     alignItems: 'center'
   },
   buttonContainer: {
-    margin: 25
+    margin: 13
   }
 })
 
