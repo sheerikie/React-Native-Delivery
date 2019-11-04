@@ -108,19 +108,15 @@ async  loginWithFacebook(){
     if (type === 'success') {
       // Get the user's name using Facebook's Graph API
       const credential = firebase.auth.FacebookAuthProvider.credential(token);
-      try {
+     
       const response = await this.props.firebase.loginWithFacebook(credential);
         if (response.user) {
           this.props.navigation.navigate('App')
-        }
-      } catch (error) {
-        console.log('general', error.message)
-      } finally {
-        console.log('error')
-      }
+        
     } else {
       // type === 'cancel'
     }
+  }
   } catch ({ message }) {
     alert(`Facebook Login Error: ${message}`);
   }

@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add expo-location@~7.0.0
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native
 
 PATH: 
   C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\xampp\php;C:\composer;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Microsoft VS Code\binC:\Go\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\AD\AppData\Roaming\Composer\vendor\bin;C:\Program Files\nodejs;C:\Users\AD\AppData\Local\Android\Sdk\platform-tools;C:\Users\AD\AppData\Local\Android\Sdk\tools;c:\sqlite;C:\Users\AD\AppData\Local\Yarn\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\AD\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\AD\go\bin;C:\Program Files\Docker Toolbox;C:\Program Files\Docker Toolbox;C:\Program Files\OpenSSL-Win64\bin\openssl.cfg;C:\Users\AD\AppData\Roaming\npm
@@ -14,7 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\AD\.gradle\workers\work\Quatrix\expo-firebase\node_modules\@babel\core\node_modules\@babel\template\node_modules\.bin'
+  Error: connect EHOSTUNREACH 104.16.24.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1128:14)
 
 npm manifest: 
   {
@@ -32,6 +33,7 @@ npm manifest:
       "expo-facebook": "^7.0.0",
       "expo-font": "~7.0.0",
       "expo-google-sign-in": "^7.0.0",
+      "expo-location": "~7.0.0",
       "firebase": "6.6.0",
       "formik": "1.5.8",
       "navigationbar-react-native": "^0.0.5",
@@ -43,6 +45,7 @@ npm manifest:
       "react-native-google-places": "^3.1.2",
       "react-native-hide-with-keyboard": "1.2.0",
       "react-native-maps": "^0.26.1",
+      "react-native-nav-tabbar": "0.0.2",
       "react-native-reanimated": "~1.2.0",
       "react-native-screens": "~1.0.0-alpha.23",
       "react-native-unimodules": "0.6.0",
