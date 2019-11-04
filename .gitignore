@@ -4,6 +4,7 @@ android
 assets
 ios
 ios
+images
 npm-debug.*
 *.jks
 *.p8

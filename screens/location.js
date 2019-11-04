@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View,  Text, StyleSheet, Dimensions } from 'react-native';
 
-export default class location extends Component {
+export default class location{
   render() {
     return (
       <View>
