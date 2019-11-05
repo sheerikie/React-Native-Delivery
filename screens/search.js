@@ -5,7 +5,7 @@ export default class search  {
   render() {
     return (
       <View>
-        <Text> This is Inbox(4) </Text>
+        <Text>0 kms  </Text>
       </View>
     )
 

@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity,
+  PermissionsAndroid
 } from 'react-native';
 import TabBar from "react-native-nav-tabbar";
-export default class App extends Component {
-  
+import { Button } from 'react-native-elements'
+import { withFirebaseHOC } from '../config/Firebase'
+import Location from './location'
+
+
+ class Home extends Component {
+  handleSignout = async () => {
+    try {
+      await this.props.firebase.signOut()
+      this.props.navigation.navigate('Auth')
+    } catch (error) {
+      console.log(error)
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -19,21 +32,31 @@ export default class App extends Component {
               >
                 <View style={styles.textContent}>
                     <Text style={{fontSize: 18}}>Home</Text>
+                    <Button
+                    title='Signout'
+                    onPress={this.handleSignout}
+                    titleStyle={{
+                      color: '#F57C00'
+                    }}
+                    type='clear'
+                  />
                 </View>
               </TabBar.Item>
               <TabBar.Item>
                 <View style={styles.textContent}>
-                    <Text style={{fontSize: 18}}>Friend</Text>
-                </View>
+                    <Text style={{fontSize: 18}}>Location Tracker</Text>
+                    <Location/>
+                </View> 
               </TabBar.Item>
               <TabBar.Item
                 icon={require('../images/My.png')}
                 selectedIcon={require('../images/MyActive.png')}
-                title="Me"
+                title="Distance Calculator"
               >
                 <View style={styles.textContent}>
                     <Text style={{fontSize: 18}}>Me</Text>
                 </View>
+                
               </TabBar.Item>
           </TabBar>
       </View>
@@ -55,3 +78,5 @@ const styles = StyleSheet.create({
   }
 });
 
+
+export default withFirebaseHOC(Home)

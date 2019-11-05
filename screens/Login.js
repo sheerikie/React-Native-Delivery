@@ -129,9 +129,9 @@ async  loginWithFacebook(){
     const { passwordVisibility, rightIcon } = this.state
     return (
       <SafeAreaView style={styles.container} accessibilityLabel="testview">
-      <ScrollView>
+      <ScrollView  >
         <HideWithKeyboard style={styles.logoContainer}>
-          <AppLogo />
+          <AppLogo/>
         </HideWithKeyboard>
         <Formik
           initialValues={{ email: '', password: '' }}
@@ -241,6 +241,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     marginBottom: 7,
+    marginTop: 37,
     alignItems: 'center'
   },
   buttonContainer: {
