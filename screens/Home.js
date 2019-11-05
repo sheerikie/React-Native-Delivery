@@ -4,15 +4,20 @@ import {
   Text,
   View,
   TouchableOpacity,
-  PermissionsAndroid
+  PermissionsAndroid,
+  Image
 } from 'react-native';
 import TabBar from "react-native-nav-tabbar";
 import { Button } from 'react-native-elements'
 import { withFirebaseHOC } from '../config/Firebase'
 import Location from './location'
+import Search from './search'
+import * as firebase from 'firebase'
+import 'firebase/auth'
 
 
  class Home extends Component {
+
   handleSignout = async () => {
     try {
       await this.props.firebase.signOut()
@@ -21,9 +26,14 @@ import Location from './location'
       console.log(error)
     }
   }
+  
+
   render() {
+    var user = firebase.auth().currentUser;
+console.log(user);
     return (
       <View style={styles.container}>
+
           <TabBar>
               <TabBar.Item
                 icon={require('../images/Home.png')}
@@ -32,6 +42,11 @@ import Location from './location'
               >
                 <View style={styles.textContent}>
                     <Text style={{fontSize: 18}}>Home</Text>
+                    <Image source={{uri:user.photoURL }}
+                     style={{width: 100, height: 100}} />
+                    <Text  style={{fontSize: 18}}>Welcome: {user.displayName}</Text>
+                    
+                   
                     <Button
                     title='Signout'
                     onPress={this.handleSignout}
@@ -51,10 +66,11 @@ import Location from './location'
               <TabBar.Item
                 icon={require('../images/My.png')}
                 selectedIcon={require('../images/MyActive.png')}
-                title="Distance Calculator"
+                title="Me"
               >
                 <View style={styles.textContent}>
                     <Text style={{fontSize: 18}}>Me</Text>
+                    <Search/>
                 </View>
                 
               </TabBar.Item>
