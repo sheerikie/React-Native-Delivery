@@ -88,7 +88,7 @@ class Search extends Component {
           }}
           query={{
             // available options: https://developers.google.com/places/web-service/autocomplete
-            key: 'AIzaSyB4Mt05YyJetcQBMu0MJ8tz98_iISHWrNw ',
+            key: ' ',
             language: 'en', // language of the results
             types: '(cities)', // default: 'geocode'
           }}
