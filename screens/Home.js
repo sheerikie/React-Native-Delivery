@@ -26,11 +26,11 @@ import 'firebase/auth'
       console.log(error)
     }
   }
-  
+
 
   render() {
     var user = firebase.auth().currentUser;
-console.log(user);
+    console.log(user);
     return (
       <View style={styles.container}>
 
@@ -44,9 +44,12 @@ console.log(user);
                     <Text style={{fontSize: 18}}>Home</Text>
                     <Image source={{uri:user.photoURL }}
                      style={{width: 100, height: 100}} />
+                     {(user.photoURL==null) ?
+                     <Image source={{uri:'https://img.icons8.com/android/144/000000/user.png',
+                      cache: 'only-if-cached', }} style={{width: 100, height: 100}} />
+                      : null}
                     <Text  style={{fontSize: 18}}>Welcome: {user.displayName}</Text>
-                    
-                   
+                    <Text>Your Email is: {user.email}</Text>
                     <Button
                     title='Signout'
                     onPress={this.handleSignout}
@@ -64,13 +67,14 @@ console.log(user);
                 </View> 
               </TabBar.Item>
               <TabBar.Item
-                icon={require('../images/My.png')}
-                selectedIcon={require('../images/MyActive.png')}
-                title="Me"
+                icon={require('../images/settings.png')}
+                selectedIcon={require('../images/settings.png')}
+                title="DC"
               >
                 <View style={styles.textContent}>
-                    <Text style={{fontSize: 18}}>Me</Text>
+                    <Text style={{fontSize: 18}}>Calculate From Current Location</Text>
                     <Search/>
+                  
                 </View>
                 
               </TabBar.Item>

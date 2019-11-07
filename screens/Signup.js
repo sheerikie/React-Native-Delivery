@@ -60,7 +60,8 @@ class Signup extends Component {
     try {
       const response = await this.props.firebase.signupWithEmail(
         email,
-        password
+        name,
+        password,
       )
 
       if (response.user.uid) {

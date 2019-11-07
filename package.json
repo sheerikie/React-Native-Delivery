@@ -16,6 +16,7 @@
     "expo-location": "~7.0.0",
     "firebase": "6.6.0",
     "formik": "1.5.8",
+    "lodash.pick": "^4.4.0",
     "navigationbar-react-native": "^0.0.5",
     "react": "16.8.3",
     "react-dom": "16.8.3",
